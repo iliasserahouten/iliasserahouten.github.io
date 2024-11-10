@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.querySelector('.nav-menu');
     const navbar = document.querySelector('.navbar');
     const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-menu li a');
     
     // Toggle menu
     hamburger.addEventListener('click', () => {
@@ -45,13 +46,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                document.querySelectorAll('.nav-menu a').forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
+                // Retirer la classe active de tous les liens
+                navLinks.forEach(link => {
+                    link.parentElement.classList.remove('active');
                 });
+                
+                // Ajouter la classe active au lien correspondant à la section visible
+                const activeId = entry.target.getAttribute('id');
+                const activeLink = document.querySelector(`.nav-menu li a[href="#${activeId}"]`);
+                if (activeLink) {
+                    activeLink.parentElement.classList.add('active');
+                }
             }
         });
     }, observerOptions);
