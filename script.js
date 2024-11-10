@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    const navbar = document.querySelector('.navbar');
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-menu li a');
     
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = e.target.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            const navbarHeight = navbar.offsetHeight;
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
             
             window.scrollTo({
                 top: targetSection.offsetTop - navbarHeight,
@@ -48,14 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 // Retirer la classe active de tous les liens
                 navLinks.forEach(link => {
-                    link.parentElement.classList.remove('active');
+                    link.classList.remove('active');
                 });
                 
                 // Ajouter la classe active au lien correspondant à la section visible
                 const activeId = entry.target.getAttribute('id');
                 const activeLink = document.querySelector(`.nav-menu li a[href="#${activeId}"]`);
                 if (activeLink) {
-                    activeLink.parentElement.classList.add('active');
+                    activeLink.classList.add('active');
                 }
             }
         });
