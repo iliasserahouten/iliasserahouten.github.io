@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ERAHOUTEN ILIASS</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.7/css/boxicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicons/2.14.0/css/devicons.min.css">
   <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
-  
+  <!-- Dans le head de votre HTML -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -17,7 +17,12 @@
   
   <nav class="navbar">
     <a href="#" class="logo">Portfolio</a>
-    <ul>
+    <div class="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="nav-menu">
       <li class="active"><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -27,28 +32,28 @@
   </nav>
 
   <section id="home" class="Home">
-    <div class="home-info">
-      <h1>Erahouten Iliass</h1>
-      <h2>I'm Data and Software Engineer</h2>
-      <p>I am a data and software engineer specializing in end-to-end data solutions and scalable software development. With a strong foundation in data engineering, I have expertise in data extraction, transformation, and loading (ETL), including web scraping and data pipeline optimization. My software engineering skills encompass developing, testing, and deploying applications that streamline data workflows and enhance data accessibility. I thrive in projects that require both analytical problem-solving and technical acumen, creating systems that turn complex data into actionable insights.
+    <div class="home-content">
+      <div class="home-info">
+        <h1>Erahouten Iliass</h1>
+        <h2>I'm Data and Software Engineer</h2>
+        <p>I am a data and software engineer specializing in end-to-end data solutions and scalable software development. With a strong foundation in data engineering, I have expertise in data extraction, transformation, and loading (ETL), including web scraping and data pipeline optimization. My software engineering skills encompass developing, testing, and deploying applications that streamline data workflows and enhance data accessibility. I thrive in projects that require both analytical problem-solving and technical acumen, creating systems that turn complex data into actionable insights.
 
-        Driven by a commitment to quality and efficiency, I am skilled in Python, SQL, and various data engineering frameworks and tools, with a focus on delivering solutions that support informed decision-making and operational excellence.
+          Driven by a commitment to quality and efficiency, I am skilled in Python, SQL, and various data engineering frameworks and tools, with a focus on delivering solutions that support informed decision-making and operational excellence.
 
-      </p>
-      <div class="btn-sci">
-        <a href="#" class="btn">Download CV</a>
-        <div class="sci">
-          <a href="https://github.com/iliasserahouten"><i class='bx bxl-github'></i></a>
-          <a href="https://www.linkedin.com/in/iliass-erahouten-620002274/"><i class='bx bxl-linkedin'></i></a>
-          <a href="https://rifbrand.company.site/"><i class='bx bxs-face-mask'></i></a>
-          <a href="https://www.instagram.com/erahouteniliass/"><i class='bx bxl-instagram' ></i></a>
+        </p>
+        <div class="btn-sci">
+          <a href="#" class="btn">Download CV</a>
+          <div class="sci mobile-social">
+            <a href="https://github.com/iliasserahouten"><i class='bx bxl-github'></i></a>
+            <a href="https://www.linkedin.com/in/iliass-erahouten-620002274/"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://rifbrand.company.site/"><i class='bx bxs-face-mask'></i></a>
+            <a href="https://www.instagram.com/erahouteniliass/"><i class='bx bxl-instagram' ></i></a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="home-img">
-      <div class="img-box">
-        <div class="img-item">
-          <img src="myy.png" alt="">
+      <div class="home-img">
+        <div class="img-box">
+          <img src="myy.png" alt="Profile" class="responsive-img">
         </div>
       </div>
     </div>
@@ -168,6 +173,6 @@
     <p>&copy; 2024 Erahouten Iliass. All rights reserved.</p>
   </footer>
   
-  
+  <script src="script.js"></script>
 </body>
 </html>
