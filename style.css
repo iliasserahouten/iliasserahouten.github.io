@@ -18,6 +18,7 @@ html {
 body {
     background: #1f1f1f;
     line-height: 1.6;
+    font-family: Arial, sans-serif;
 }
 
 a {
@@ -30,8 +31,9 @@ a {
     left: 0;
     top: 0;
     width: 100%;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem 2rem;
+    background: #333;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,35 +43,49 @@ a {
 
 .hamburger {
     display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
 }
 
 @media (max-width: 768px) {
     .hamburger {
-        display: block;
-        cursor: pointer;
+        display: flex;
     }
 
     .nav-menu {
         display: none;
         width: 100%;
         position: absolute;
-        top: 100%;
+        top: 60px;
         left: 0;
-        background: rgba(0, 0, 0, 0.9);
+        background: #333;
+        flex-direction: column;
     }
 
     .nav-menu.active {
-        display: block;
+        display: flex;
     }
 
     .nav-menu li {
         margin: 1rem 0;
+        text-align: center;
     }
 }
 
+.nav-menu li a.active {
+    color: #00ff88;
+    font-weight: bold;
+}
+
 .navbar .logo {
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .navbar ul {
@@ -79,16 +95,18 @@ a {
 .navbar ul li {
     list-style: none;
     padding-left: 25px;
+    margin-left: 2rem;
 }
 
 .navbar ul li a {
     font-size: 20px;
     font-weight: 500;
+    color: white;
 }
 
 .navbar ul li:hover a,
 .navbar ul li.active a {
-    color: goldenrod;
+    color: #00ff88;
 }
 
 .Home {
@@ -385,7 +403,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 4rem 2rem;
     position: relative;
 }
 
@@ -405,6 +423,8 @@ section {
     display: flex;
     flex-direction: column-reverse;
     gap: 2rem;
+    align-items: center;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -471,6 +491,7 @@ p {
     display: grid;
     gap: 20px;
     padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .project {
@@ -482,87 +503,6 @@ p {
 
 .project:hover {
     transform: translateY(-5px);
-}
-
-/* Styles responsive */
-@media screen and (max-width: 768px) {
-    .projects {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        padding: 10px;
-    }
-
-    .project {
-        margin: 10px 0;
-        padding: 15px;
-    }
-
-    .project h2 {
-        font-size: 1.2rem;
-        margin-bottom: 8px;
-    }
-
-    .project p {
-        font-size: 0.9rem;
-        margin-bottom: 12px;
-    }
-
-    .project a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 8px;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .project-icons {
-        margin-top: 10px;
-        font-size: 0.9rem;
-    }
-
-    .project-icons i {
-        margin-right: 5px;
-    }
-}
-
-/* Tablettes */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .projects {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Desktop */
-@media screen and (min-width: 1025px) {
-    .projects {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
-}
-
-.project {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 1.5rem;
-    transition: transform 0.3s ease;
-}
-
-.project:hover {
-    transform: translateY(-5px);
-}
-
-.project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
 }
 
 .project h2 {
@@ -671,4 +611,15 @@ home-info,
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #ccc;
+}
+
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.footer p {
+    margin: 0;
 }
